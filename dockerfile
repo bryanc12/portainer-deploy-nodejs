@@ -20,6 +20,6 @@ RUN ln -s /opt/nodejs/bin/npm /usr/local/bin/npm
 # Get the application from git
 WORKDIR /application
 RUN git clone ${GIT_REPO_URL} .
-COPY ./run.sh /application/run.sh
+COPY ./run.sh /application/
 
 CMD ["/bin/bash", "/application/run.sh"]
