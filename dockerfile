@@ -1,5 +1,7 @@
 FROM alpine:3.19.0
 
+ARG GIT_REPO_URL
+
 ENV NODE_PACKAGE_URL https://nodejs.org/dist/v20.10.0/node-v20.10.0-linux-arm64.tar.gz
 
 # Install dependencies
