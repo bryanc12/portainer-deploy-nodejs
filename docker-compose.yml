@@ -6,7 +6,9 @@ services:
         build:
             context: .
             dockerfile: dockerfile
+            args:
+                - GIT_REPO_URL=${GIT_REPO_URL?err}
         ports:
             - "${EXTERNAL_PORT?err}:${INTERNAL_PORT?err}"
         environment:
-            - GIT_REPO_URL=${GIT_REPO_URL?err}
+            # - GIT_REPO_URL=${GIT_REPO_URL?err}
