@@ -22,4 +22,5 @@ WORKDIR /application
 RUN git clone ${GIT_REPO_URL} .
 COPY ./run.sh /application/
 
-CMD ["/bin/bash", "/application/run.sh"]
+# CMD ["/bin/bash", "/application/run.sh"]
+CMD ["/bin/bash", "ls"]
