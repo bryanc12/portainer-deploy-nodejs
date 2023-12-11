@@ -1,0 +1,12 @@
+version: "3.8"
+
+services:
+    application:
+        container_name: ${CONTAINER_NAME?err}
+        build:
+            context: .
+            dockerfile: dockerfile
+        ports:
+            - ${EXTERNAL_PORT?err}:${INTERNAL_PORT?err}
+        environment:
+            - GIT_REPO_URL=${REPO?err}
