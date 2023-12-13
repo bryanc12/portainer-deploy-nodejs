@@ -6,11 +6,23 @@ services:
         build:
             context: .
             dockerfile: dockerfile
-
-            # Pass the environment variables to the dockerfile
             args:
                 GIT_REPO_URL: ${GIT_REPO_URL?err}
         ports:
             - "${EXTERNAL_PORT?err}:${INTERNAL_PORT?err}"
         volumes:
-            - .env:/application/.env
+            - env:/application/.env
+        dns:
+            - 8.8.8.8
+            - 1.1.1.1
+        # deploy:
+        #     resources:
+        #         limits:
+        #             cpus: "0.1"
+        #             memory: 50M
+        #         reservations:
+        #             cpus: "0.1"
+        #             memory: 50M
+
+volumes:
+    env:
