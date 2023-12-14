@@ -7,6 +7,7 @@ services:
             context: .
             dockerfile: dockerfile
             no_cache: true
+            pull: true
             args:
                 GIT_REPO_URL: ${GIT_REPO_URL?err}
         ports:
