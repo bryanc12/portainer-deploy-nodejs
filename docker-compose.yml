@@ -11,7 +11,7 @@ services:
         ports:
             - "${EXTERNAL_PORT?err}:${INTERNAL_PORT?err}"
         volumes:
-            - env:/application/.env
+            - env:/application/env
         # deploy:
         #     resources:
         #         limits:
