@@ -1,4 +1,4 @@
 cd /application
-git pull
+git fetch
 npm install
 npm start

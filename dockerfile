@@ -10,6 +10,7 @@ RUN apk add --update npm
 # Setup application
 WORKDIR /application
 RUN git clone ${GIT_REPO_URL} .
+RUN git config credential.helper store
 COPY ./run.sh /application/
 
 # Run application
