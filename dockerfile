@@ -20,7 +20,7 @@ RUN git config credential.helper store
 COPY ./run.sh /application/
 
 # Switch to app user
-USER app
+# USER app
 
 # Run application
 CMD ["/bin/bash", "/application/run.sh"]
