@@ -3,11 +3,11 @@ version: "3.8"
 services:
     application:
         container_name: ${CONTAINER_NAME?err}
+        restart: unless-stopped
         build:
             context: .
             dockerfile: dockerfile
             no_cache: true
-            pull: true
             args:
                 GIT_REPO_URL: ${GIT_REPO_URL?err}
         ports:
