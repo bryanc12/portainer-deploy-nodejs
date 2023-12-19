@@ -6,6 +6,7 @@ ARG GIT_REPO_URL
 RUN addgroup -S app && adduser -S app -G app
 # Create application folder and make app user owner of application directory
 RUN mkdir -p /application && chown -R app:app /application
+RUN chown -R app:app /home/app/.gitconfig
 
 # Install dependencies
 RUN apk update
